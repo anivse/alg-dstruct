@@ -60,23 +60,18 @@ graph_t GraphCreate()
 	FILE* file = fopen("test.txt", "r");
 	graph_t graph;
 	graph_t error = { 0,NULL };
-	edge_t* tmp;
 	fscanf(file, "%i", &graph.size);
-	graph.edge = malloc(sizeof(edge_t));
+	int numEdge = 0.5 * graph.size * (graph.size - 1);
+	graph.edge = malloc(numEdge * sizeof(edge_t));
 	if (!graph.edge)
 	{
 		perror("Memory error");
 		return error;
 	}
 	int i = 0;
-	while ((fscanf(file, "%i", &graph.edge[i].one) != EOF) && (fscanf(file, "%i", &graph.edge[i].two) != EOF))
+	while ((fscanf(file, "%i", &graph.edge[i].one) != EOF) && (fscanf(file, "%i", &graph.edge[i].two) != EOF) && (i != numEdge))
 	{
 		i++;
-		tmp = realloc(graph.edge, (i + 1) * sizeof(edge_t));
-		if (tmp != NULL)
-		{
-			graph.edge = tmp;
-		}
 	}
 	graph.edge[i].one = 0;
 	graph.edge[i].two = 0;

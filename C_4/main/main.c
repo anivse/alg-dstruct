@@ -8,9 +8,9 @@
 * RAM: 4 GB
 * SSD: 234 GB
 *
-* Vertex number 100000
+* Vertex number 10000
 * 
-* Result - 39 seconds
+* Result - 30 seconds
 *
 */
 
