@@ -228,7 +228,7 @@ void StressTest()
 
 	for (int i = 0;i < numEdge; i++)
 	{
-		fprintf(file, "%i  %i\n", Random(0, 99999), Random(0, 99999));
+		fprintf(file, "%i  %i\n", Random(0, 9999), Random(0, 9999));
 	}
 
 	fclose(file);
