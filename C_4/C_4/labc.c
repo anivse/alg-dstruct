@@ -219,12 +219,14 @@ void StressTest()
 	LARGE_INTEGER start, end, counter;  
 	double time;
 
-	int numVert = 100000;
+	int numVert = 10000;
+
+	int numEdge = numVert * 100;
 
 	FILE* file = fopen("test.txt", "w");
-	fprintf(file,"%i\n", numVert);
+	fprintf(file, "%i\n", numVert);
 
-	for (int i = 0;i < numVert * 2;i++)
+	for (int i = 0;i < numEdge; i++)
 	{
 		fprintf(file, "%i  %i\n", Random(0, 99999), Random(0, 99999));
 	}
